@@ -271,19 +271,3 @@ curl -s http://127.0.0.1:8000/health
    ```bash
    curl https://<your-render-app-url>.onrender.com/health
    ```
-
----
-
-## Teaching Staff Access Checklist
-
-In compliance with UTS requirements, administrator access must be granted to the following staff members on GitHub:
-
-- [x] `anthony.so@uts.edu.au`
-- [x] `reasmey.tith@uts.edu.au`
-- [x] `nino.eclarin@uts.edu.au`
-- [x] `savinay.singh@uts.edu.au`
-- [x] `thehai.bui@uts.edu.au`
-- [x] `siddharth.arora@uts.edu.au`
-- [x] `sidhant.bajaj@uts.edu.au`
-- [x] `yasi.mohammadi@uts.edu.au`
-- [x] `tyler.htun@uts.edu.au`
