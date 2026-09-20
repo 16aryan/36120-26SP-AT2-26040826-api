@@ -33,8 +33,20 @@ jobs:
 
     - name: Run Pytest Test Suite
       run: |
-        pytest tests/ -v
+        mkdir -p reports
+        pytest tests/ -v --junitxml=reports/junit_report.xml
 
     - name: Run Interactive Verification Script
       run: |
         python verify_api.py
+
+    - name: Upload Verification & Test Artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: api-artifacts-python-${{ matrix.python-version }}
+        path: |
+          reports/
+          api_verification_results.json
+          api_verification_summary.md
+        retention-days: 14
