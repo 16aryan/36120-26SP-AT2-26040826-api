@@ -10,6 +10,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 [![Render](https://img.shields.io/badge/Render-Deployed-46E3B7.svg?logo=render&logoColor=white)](https://render.com)
 [![TestPyPI Package](https://img.shields.io/badge/TestPyPI-nba--prep--26040826%20v0.4.0-blue.svg)](https://test.pypi.org/project/nba-prep-26040826/0.4.0/)
+[![CI Pipeline](https://github.com/16aryan/36120-26SP-AT2-26040826-api/actions/workflows/ci.yml/badge.svg)](https://github.com/16aryan/36120-26SP-AT2-26040826-api/actions/workflows/ci.yml)
 
 ---
 
