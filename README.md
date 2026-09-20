@@ -49,6 +49,19 @@ The service exposes trained ML models predicting two weather-derived indices for
 
 ---
 
+
+---
+
+## Operational Verification Dashboard
+
+The test and deployment pipeline automatically renders and publishes visual inference telemetry on each build:
+
+![Weather Intelligence API Operational Inference Dashboard](api_verification_dashboard.png)
+
+* **Panel 1 (Left):** 3-Day Climate Comfort Index (CCI) multi-horizon forecast plotted against outdoor suitability comfort thresholds (Comfortable $\ge 60$, Excellent $\ge 80$).
+* **Panel 2 (Center):** Weather Hazard Category (WHC) +7-day lead time classification probabilities predicting *Moderate Risk*.
+* **Panel 3 (Right):** Latency benchmarks for all 5 endpoints verifying sub-10ms operational response times.
+
 ## API Endpoints & Contract Specifications
 
 ### 1. Root Self-Documentation (`GET /`)

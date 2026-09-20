@@ -49,4 +49,5 @@ jobs:
           reports/
           api_verification_results.json
           api_verification_summary.md
+          api_verification_dashboard.png
         retention-days: 14

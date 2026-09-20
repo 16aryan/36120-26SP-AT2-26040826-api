@@ -1,0 +1,260 @@
+{
+  "timestamp": "2026-09-20T01:42:43.626147Z",
+  "service": "Weather Intelligence API",
+  "version": "1.0.0",
+  "tests": [
+    {
+      "title": "Root Endpoint (Self-Documentation)",
+      "method": "GET",
+      "endpoint": "/",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "project": "Weather Intelligence API",
+        "description": "Machine learning services for weather forecasting",
+        "version": "1.0.0",
+        "github": "https://github.com/16aryan/36120-26SP-AT2-26040826-api",
+        "endpoints": [
+          "/",
+          "/health",
+          "/predict/index/comfort_climate",
+          "/predict/category/weather_hazard",
+          "/model-metadata"
+        ]
+      }
+    },
+    {
+      "title": "Operational Health Probe",
+      "method": "GET",
+      "endpoint": "/health",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "status": "healthy",
+        "message": "Weather Intelligence API is running"
+      }
+    },
+    {
+      "title": "Model Transparency & Metadata",
+      "method": "GET",
+      "endpoint": "/model-metadata",
+      "status_code": 200,
+      "passed": true,
+      "response": [
+        {
+          "target": "Climate Comfort Index",
+          "prediction_type": "regression",
+          "algorithm": "Ridge",
+          "forecast_horizon": "3 Days (+1, +2, +3)",
+          "features": [
+            "temperature_2m",
+            "relative_humidity_2m",
+            "wind_speed_10m",
+            "cloud_cover",
+            "precipitation",
+            "wind_gusts_10m",
+            "apparent_temp",
+            "sin_dayofyear",
+            "cos_dayofyear",
+            "sin_month",
+            "cos_month",
+            "temperature_2m_lag_1",
+            "temperature_2m_lag_2",
+            "temperature_2m_lag_3",
+            "temperature_2m_lag_7",
+            "precipitation_lag_1",
+            "precipitation_lag_2",
+            "precipitation_lag_3",
+            "wind_speed_10m_lag_1",
+            "cloud_cover_lag_1",
+            "cci_lag_1",
+            "cci_lag_2",
+            "cci_lag_3",
+            "temperature_2m_roll_mean_7",
+            "temperature_2m_roll_mean_14",
+            "temperature_2m_roll_max_14",
+            "temperature_2m_roll_min_14",
+            "precipitation_roll_max_7",
+            "cci_roll_mean_3",
+            "cci_roll_mean_14",
+            "dry_streak"
+          ],
+          "feature_importance": {
+            "cci_roll_mean_3": 4.7168,
+            "cci_lag_1": 2.2071,
+            "cos_dayofyear": 1.9142,
+            "cci_lag_2": 1.9017,
+            "cci_roll_mean_14": 1.3356,
+            "apparent_temp": 1.1428,
+            "temperature_2m_roll_min_14": 1.0944,
+            "temperature_2m_roll_max_14": 1.0193,
+            "cos_month": 0.9179,
+            "relative_humidity_2m": 0.9038,
+            "sin_dayofyear": 0.886,
+            "temperature_2m_roll_mean_7": 0.7965,
+            "cloud_cover": 0.7322,
+            "temperature_2m": 0.658,
+            "sin_month": 0.5069,
+            "wind_speed_10m": 0.393,
+            "precipitation_roll_max_7": 0.3881,
+            "wind_gusts_10m": 0.3718,
+            "wind_speed_10m_lag_1": 0.3549,
+            "temperature_2m_lag_1": 0.3256,
+            "temperature_2m_lag_7": 0.2783,
+            "cci_lag_3": 0.2713,
+            "temperature_2m_lag_3": 0.221,
+            "temperature_2m_roll_mean_14": 0.2201,
+            "cloud_cover_lag_1": 0.2153,
+            "precipitation": 0.1845,
+            "temperature_2m_lag_2": 0.1709,
+            "precipitation_lag_1": 0.1182,
+            "dry_streak": 0.0992,
+            "precipitation_lag_3": 0.0642,
+            "precipitation_lag_2": 0.0357
+          },
+          "performance_metrics": {
+            "h1 (+1d)": {
+              "RMSE": 8.796,
+              "MAE": 6.7222,
+              "R2": 0.436
+            },
+            "h2 (+2d)": {
+              "RMSE": 10.0694,
+              "MAE": 7.6384,
+              "R2": 0.2625
+            },
+            "h3 (+3d)": {
+              "RMSE": 10.2902,
+              "MAE": 7.8633,
+              "R2": 0.2293
+            }
+          }
+        },
+        {
+          "target": "Weather Hazard Category",
+          "prediction_type": "multiclass_classification",
+          "algorithm": "Random Forest",
+          "forecast_horizon": "7 Days (+7)",
+          "features": [
+            "wind_gusts_10m",
+            "precipitation",
+            "cloud_cover",
+            "temperature_2m",
+            "whi",
+            "sin_dayofyear",
+            "cos_dayofyear",
+            "sin_month",
+            "cos_month",
+            "wind_gusts_10m_lag_1",
+            "wind_gusts_10m_lag_2",
+            "wind_gusts_10m_lag_7",
+            "wind_gusts_10m_lag_14",
+            "precipitation_lag_1",
+            "precipitation_lag_2",
+            "precipitation_lag_7",
+            "cloud_cover_lag_1",
+            "cloud_cover_lag_7",
+            "temperature_2m_lag_1",
+            "temperature_2m_lag_7",
+            "wind_gusts_10m_roll_std_7",
+            "wind_gusts_10m_roll_std_14",
+            "wind_gusts_10m_roll_max_7",
+            "precipitation_roll_max_7",
+            "precipitation_roll_max_14",
+            "temperature_2m_roll_mean_14",
+            "temperature_2m_roll_max_14",
+            "temperature_2m_roll_min_14"
+          ],
+          "feature_importance": {
+            "cloud_cover_lag_1": 0.0689,
+            "temperature_2m_roll_max_14": 0.0655,
+            "wind_gusts_10m_roll_std_14": 0.0595,
+            "temperature_2m_roll_min_14": 0.058,
+            "wind_gusts_10m_lag_14": 0.0554,
+            "wind_gusts_10m_lag_7": 0.0486,
+            "precipitation_lag_7": 0.0481,
+            "temperature_2m": 0.0475,
+            "wind_gusts_10m_roll_std_7": 0.0426,
+            "cloud_cover_lag_7": 0.041,
+            "cos_dayofyear": 0.0408,
+            "temperature_2m_roll_mean_14": 0.0404,
+            "temperature_2m_lag_1": 0.0392,
+            "wind_gusts_10m_roll_max_7": 0.0367,
+            "sin_dayofyear": 0.0313,
+            "wind_gusts_10m_lag_1": 0.0309,
+            "precipitation_roll_max_14": 0.0301,
+            "whi": 0.0284,
+            "temperature_2m_lag_7": 0.0265,
+            "cloud_cover": 0.0263,
+            "wind_gusts_10m_lag_2": 0.0253,
+            "precipitation_roll_max_7": 0.0251,
+            "wind_gusts_10m": 0.0243,
+            "precipitation": 0.0173,
+            "cos_month": 0.0112,
+            "precipitation_lag_2": 0.0106,
+            "sin_month": 0.0102,
+            "precipitation_lag_1": 0.0101
+          },
+          "performance_metrics": {
+            "Accuracy": 0.5447,
+            "Balanced Accuracy": 0.288,
+            "Macro F1": 0.2792,
+            "Weighted F1": 0.5336
+          }
+        }
+      ]
+    },
+    {
+      "title": "Climate Comfort Index (CCI) Forecast (+1d, +2d, +3d)",
+      "method": "GET",
+      "endpoint": "/predict/index/comfort_climate?date=2025-01-01",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "input_date": "2025-01-01",
+        "predictions": {
+          "comfort_climate": {
+            "2025-01-02": 82.8,
+            "2025-01-03": 80.4,
+            "2025-01-04": 79.0
+          }
+        }
+      }
+    },
+    {
+      "title": "Weather Hazard Category (WHC) Forecast (+7d)",
+      "method": "GET",
+      "endpoint": "/predict/category/weather_hazard?date=2025-01-01",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "input_date": "2025-01-01",
+        "predictions": {
+          "weather_hazard": {
+            "2025-01-08": "Moderate Risk"
+          }
+        }
+      }
+    },
+    {
+      "title": "Input Validation (Malformed Date -> HTTP 422)",
+      "method": "GET",
+      "endpoint": "/predict/index/comfort_climate?date=not-a-date",
+      "status_code": 422,
+      "passed": true,
+      "response": {
+        "detail": "Invalid date 'not-a-date'. Expected format YYYY-MM-DD."
+      }
+    },
+    {
+      "title": "Input Validation (Impossible Date -> HTTP 422)",
+      "method": "GET",
+      "endpoint": "/predict/category/weather_hazard?date=2025-02-31",
+      "status_code": 422,
+      "passed": true,
+      "response": {
+        "detail": "Invalid date '2025-02-31'. Expected format YYYY-MM-DD."
+      }
+    }
+  ]
+}
