@@ -186,7 +186,7 @@ def model_metadata():
     if CCI_METADATA:
         metadata_list.append({
             "target": CCI_METADATA.get("target", "Climate Comfort Index"),
-            "prediction_type": CCI_METADATA.get("prediction_type", "regression"),
+            "prediction_type": str(CCI_METADATA.get("prediction_type", "regression")).lower(),
             "algorithm": CCI_METADATA.get("algorithm", "Ridge Regressor"),
             "forecast_horizon": CCI_METADATA.get("forecast_horizon", "3 Days"),
             "features": CCI_METADATA.get("features", []),
@@ -208,7 +208,7 @@ def model_metadata():
     if WHC_METADATA:
         metadata_list.append({
             "target": WHC_METADATA.get("target", "Weather Hazard Category"),
-            "prediction_type": WHC_METADATA.get("prediction_type", "multiclass classification"),
+            "prediction_type": str(WHC_METADATA.get("prediction_type", "multiclass classification")).lower(),
             "algorithm": WHC_METADATA.get("algorithm", "Random Forest"),
             "forecast_horizon": WHC_METADATA.get("forecast_horizon", "7 Days"),
             "features": WHC_METADATA.get("features", []),
