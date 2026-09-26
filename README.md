@@ -269,5 +269,5 @@ curl -s http://127.0.0.1:8000/health
 7. Click **Create Web Service**. Render will automatically build the Docker image and deploy the live URL.
 8. Verify the live service:
    ```bash
-   curl https://weather-intel-api-26040826.onrender.com/health
+   curl https://three6120-26sp-at2-26040826-api.onrender.com/health
    ```
